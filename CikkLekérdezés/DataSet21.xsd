@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet21" targetNamespace="http://tempuri.org/DataSet21.xsd" xmlns:mstns="http://tempuri.org/DataSet21.xsd" xmlns="http://tempuri.org/DataSet21.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FusetechConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FusetechConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CikkLekérdezés.Properties.Settings.GlobalReference.Default.FusetechConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KeszletModKerelmekTableAdapter" GeneratorDataComponentClassName="KeszletModKerelmekTableAdapter" Name="KeszletModKerelmek" UserDataComponentName="KeszletModKerelmekTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FusetechConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        K.Cikkszam, SC01.SC01002 AS Desc1, SC01.SC01003, SC01.SC01093, K.Raktar, K.Polc, K.Menyyiseg, RTRIM(SCU.Description) AS Description, K.ModositasOka, K.JavitoIntezkedes, K.Kerelmezo, K.KerelmezesIdeje, 
+                         K.Engedelyezo1, K.Engedelyezo2, K.EngedelyezesIdeje, K.Statusz, K.ID, K.Teendo, K.Munkarendeles, K.VMRendelesek, ORK.LineNumber, ORK.InvoiceNo, M.MP57024
+FROM            KeszletModKeresek AS K LEFT OUTER JOIN
+                         ScaCompDB.dbo.SC010300 AS SC01 ON K.Cikkszam = SC01.SC01001 LEFT OUTER JOIN
+                         ScaCompDB.dbo.VF_SCUN0300_UnitCode AS SCU ON SC01.SC01193 = SCU.UnitCode LEFT OUTER JOIN
+                         ScaCompDB.dbo.VF_OR_SalesOrder_0321_KeszletMod AS ORK ON K.ID = ORK.KeszID LEFT OUTER JOIN
+                         ScaCompDB.dbo.MP570300 AS M ON SC01.SC01001 = M.MP57001
+ORDER BY K.Statusz, K.KerelmezesIdeje DESC, K.Cikkszam</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Cikkszam" DataSetColumn="Cikkszam" />
+              <Mapping SourceColumn="Desc1" DataSetColumn="Desc1" />
+              <Mapping SourceColumn="SC01003" DataSetColumn="SC01003" />
+              <Mapping SourceColumn="SC01093" DataSetColumn="SC01093" />
+              <Mapping SourceColumn="Raktar" DataSetColumn="Raktar" />
+              <Mapping SourceColumn="Polc" DataSetColumn="Polc" />
+              <Mapping SourceColumn="Menyyiseg" DataSetColumn="Menyyiseg" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="ModositasOka" DataSetColumn="ModositasOka" />
+              <Mapping SourceColumn="JavitoIntezkedes" DataSetColumn="JavitoIntezkedes" />
+              <Mapping SourceColumn="Kerelmezo" DataSetColumn="Kerelmezo" />
+              <Mapping SourceColumn="KerelmezesIdeje" DataSetColumn="KerelmezesIdeje" />
+              <Mapping SourceColumn="Engedelyezo1" DataSetColumn="Engedelyezo1" />
+              <Mapping SourceColumn="Engedelyezo2" DataSetColumn="Engedelyezo2" />
+              <Mapping SourceColumn="EngedelyezesIdeje" DataSetColumn="EngedelyezesIdeje" />
+              <Mapping SourceColumn="Statusz" DataSetColumn="Statusz" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Teendo" DataSetColumn="Teendo" />
+              <Mapping SourceColumn="Munkarendeles" DataSetColumn="Munkarendeles" />
+              <Mapping SourceColumn="VMRendelesek" DataSetColumn="VMRendelesek" />
+              <Mapping SourceColumn="LineNumber" DataSetColumn="LineNumber" />
+              <Mapping SourceColumn="InvoiceNo" DataSetColumn="InvoiceNo" />
+              <Mapping SourceColumn="MP57024" DataSetColumn="MP57024" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet21" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet21" msprop:Generator_UserDSName="DataSet21">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="KeszletModKerelmek" msprop:Generator_TableClassName="KeszletModKerelmekDataTable" msprop:Generator_TableVarName="tableKeszletModKerelmek" msprop:Generator_RowChangedName="KeszletModKerelmekRowChanged" msprop:Generator_TablePropName="KeszletModKerelmek" msprop:Generator_RowDeletingName="KeszletModKerelmekRowDeleting" msprop:Generator_RowChangingName="KeszletModKerelmekRowChanging" msprop:Generator_RowEvHandlerName="KeszletModKerelmekRowChangeEventHandler" msprop:Generator_RowDeletedName="KeszletModKerelmekRowDeleted" msprop:Generator_RowClassName="KeszletModKerelmekRow" msprop:Generator_UserTableName="KeszletModKerelmek" msprop:Generator_RowEvArgName="KeszletModKerelmekRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cikkszam" msprop:Generator_ColumnVarNameInTable="columnCikkszam" msprop:Generator_ColumnPropNameInRow="Cikkszam" msprop:Generator_ColumnPropNameInTable="CikkszamColumn" msprop:Generator_UserColumnName="Cikkszam" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Desc1" msprop:Generator_ColumnVarNameInTable="columnDesc1" msprop:Generator_ColumnPropNameInRow="Desc1" msprop:Generator_ColumnPropNameInTable="Desc1Column" msprop:Generator_UserColumnName="Desc1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SC01003" msprop:Generator_ColumnVarNameInTable="columnSC01003" msprop:Generator_ColumnPropNameInRow="SC01003" msprop:Generator_ColumnPropNameInTable="SC01003Column" msprop:Generator_UserColumnName="SC01003" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SC01093" msprop:Generator_ColumnVarNameInTable="columnSC01093" msprop:Generator_ColumnPropNameInRow="SC01093" msprop:Generator_ColumnPropNameInTable="SC01093Column" msprop:Generator_UserColumnName="SC01093" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Raktar" msprop:Generator_ColumnVarNameInTable="columnRaktar" msprop:Generator_ColumnPropNameInRow="Raktar" msprop:Generator_ColumnPropNameInTable="RaktarColumn" msprop:Generator_UserColumnName="Raktar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Polc" msprop:Generator_ColumnVarNameInTable="columnPolc" msprop:Generator_ColumnPropNameInRow="Polc" msprop:Generator_ColumnPropNameInTable="PolcColumn" msprop:Generator_UserColumnName="Polc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Menyyiseg" msprop:Generator_ColumnVarNameInTable="columnMenyyiseg" msprop:Generator_ColumnPropNameInRow="Menyyiseg" msprop:Generator_ColumnPropNameInTable="MenyyisegColumn" msprop:Generator_UserColumnName="Menyyiseg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModositasOka" msprop:Generator_ColumnVarNameInTable="columnModositasOka" msprop:Generator_ColumnPropNameInRow="ModositasOka" msprop:Generator_ColumnPropNameInTable="ModositasOkaColumn" msprop:Generator_UserColumnName="ModositasOka" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JavitoIntezkedes" msprop:Generator_ColumnVarNameInTable="columnJavitoIntezkedes" msprop:Generator_ColumnPropNameInRow="JavitoIntezkedes" msprop:Generator_ColumnPropNameInTable="JavitoIntezkedesColumn" msprop:Generator_UserColumnName="JavitoIntezkedes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kerelmezo" msprop:Generator_ColumnVarNameInTable="columnKerelmezo" msprop:Generator_ColumnPropNameInRow="Kerelmezo" msprop:Generator_ColumnPropNameInTable="KerelmezoColumn" msprop:Generator_UserColumnName="Kerelmezo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KerelmezesIdeje" msprop:Generator_ColumnVarNameInTable="columnKerelmezesIdeje" msprop:Generator_ColumnPropNameInRow="KerelmezesIdeje" msprop:Generator_ColumnPropNameInTable="KerelmezesIdejeColumn" msprop:Generator_UserColumnName="KerelmezesIdeje" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Engedelyezo1" msprop:Generator_ColumnVarNameInTable="columnEngedelyezo1" msprop:Generator_ColumnPropNameInRow="Engedelyezo1" msprop:Generator_ColumnPropNameInTable="Engedelyezo1Column" msprop:Generator_UserColumnName="Engedelyezo1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Engedelyezo2" msprop:Generator_ColumnVarNameInTable="columnEngedelyezo2" msprop:Generator_ColumnPropNameInRow="Engedelyezo2" msprop:Generator_ColumnPropNameInTable="Engedelyezo2Column" msprop:Generator_UserColumnName="Engedelyezo2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EngedelyezesIdeje" msprop:Generator_ColumnVarNameInTable="columnEngedelyezesIdeje" msprop:Generator_ColumnPropNameInRow="EngedelyezesIdeje" msprop:Generator_ColumnPropNameInTable="EngedelyezesIdejeColumn" msprop:Generator_UserColumnName="EngedelyezesIdeje" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Statusz" msprop:Generator_ColumnVarNameInTable="columnStatusz" msprop:Generator_ColumnPropNameInRow="Statusz" msprop:Generator_ColumnPropNameInTable="StatuszColumn" msprop:Generator_UserColumnName="Statusz" type="xs:int" minOccurs="0" />
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Teendo" msprop:Generator_ColumnVarNameInTable="columnTeendo" msprop:Generator_ColumnPropNameInRow="Teendo" msprop:Generator_ColumnPropNameInTable="TeendoColumn" msprop:Generator_UserColumnName="Teendo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Munkarendeles" msprop:Generator_ColumnVarNameInTable="columnMunkarendeles" msprop:Generator_ColumnPropNameInRow="Munkarendeles" msprop:Generator_ColumnPropNameInTable="MunkarendelesColumn" msprop:Generator_UserColumnName="Munkarendeles" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VMRendelesek" msprop:Generator_ColumnVarNameInTable="columnVMRendelesek" msprop:Generator_ColumnPropNameInRow="VMRendelesek" msprop:Generator_ColumnPropNameInTable="VMRendelesekColumn" msprop:Generator_UserColumnName="VMRendelesek" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LineNumber" msprop:Generator_ColumnVarNameInTable="columnLineNumber" msprop:Generator_ColumnPropNameInRow="LineNumber" msprop:Generator_ColumnPropNameInTable="LineNumberColumn" msprop:Generator_UserColumnName="LineNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceNo" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MP57024" msprop:Generator_ColumnVarNameInTable="columnMP57024" msprop:Generator_ColumnPropNameInRow="MP57024" msprop:Generator_ColumnPropNameInTable="MP57024Column" msprop:Generator_UserColumnName="MP57024" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
